@@ -35,8 +35,11 @@ const ProductSlice = createSlice({
       const { itemId } = action.payload;
       state.cart = state.cart.filter((item) => item.id !== itemId);
     },
+    clearCart: (state) => {
+      state.cart = [];
+    }, // Define the clearCart reducer here
   },
 });
 
 export default ProductSlice.reducer;
-export const { addData, increaseQuantity, decreaseQuantity, removeItem } = ProductSlice.actions;
+export const { addData, increaseQuantity, decreaseQuantity, removeItem, clearCart } = ProductSlice.actions;

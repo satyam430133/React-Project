@@ -9,6 +9,7 @@ const PaymentSuccessPage = () => {
     // Simulate payment processing for 3 seconds
     const timer = setTimeout(() => {
       setIsProcessing(false); // After 3 seconds, set isProcessing to false
+      dispatch(clearCart()); // Dispatch action to clear cart upon successful payment
     }, 3000);
 
     // Clean up timer to prevent memory leaks
